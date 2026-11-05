@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>나의 사주 캐릭터 찾기 — 생일로 보는 일간 캐릭터 | 사주보미</title>
+  <meta name="description" content="태어난 날짜만 넣으면 사주의 일간(태어난 날의 천간)으로 열 가지 자연 캐릭터 가운데 나의 사주 캐릭터를 알려 드려요. 계산은 브라우저 안에서만 하고 날짜는 어디에도 보내지 않아요.">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="alternate" hreflang="en" href="../../character/">
+  <!-- Open Graph: 이 페이지는 정적이라 링크 미리보기를 만드는 크롤러에게 주소(?c=byeong)마다 다른 그림을 줄 수 없다.
+       그래서 페이지 전체의 기본 그림 하나를 쓴다 (한국어 페이지는 글자 없는 그림). 캐릭터마다의 그림 열 장
+       (assets/og/<천간>.png, 1200×630)은 tools/store/og_images.py가 만들어 두었고, 나중에 캐릭터마다 페이지를
+       따로 둘 때 쓴다. 미리보기 그림은 절대 주소여야 해서 공개 주소(https://whmafter.github.io/)를 적었다. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="사주보미">
+  <meta property="og:title" content="나의 사주 캐릭터 찾기">
+  <meta property="og:description" content="태어난 날짜를 넣으면 사주의 일간으로 정해지는 열 가지 자연 캐릭터 가운데 나의 캐릭터를 만나요. 재미로 보는 사주.">
+  <meta property="og:url" content="https://whmafter.github.io/ko/character/">
+  <meta property="og:image" content="https://whmafter.github.io/assets/og/default_ko.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="사주보미의 열 캐릭터">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">사주보미</a>
+      <nav class="site-nav" aria-label="사이트">
+        <a href="../../privacy/ko/">개인정보처리방침</a>
+        <a href="../../character/" lang="en" hreflang="en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>나의 사주 캐릭터 찾기</h1>
+      <p>사주에서는 태어난 날의 글자(일간)가 나를 나타내요. 일간은 열 가지이고, 사주보미는 일간마다 자연 캐릭터 하나를 정해 두었어요. 태어난 날짜를 넣고 나의 캐릭터를 만나 보세요.</p>
+      <!-- 날짜 칸에 name이 없어서, 스크립트가 꺼져 있어도 날짜가 주소에 실려 가지 않는다. -->
+      <form class="character-form" id="character-form" novalidate>
+        <label for="birth-date">태어난 날짜</label>
+        <p class="character-hint" id="birth-date-hint">태어난 곳의 날짜를 양력으로 넣어 주세요. 음력 생일은 앱에서 넣을 수 있어요.</p>
+        <div class="character-row">
+          <input type="date" id="birth-date" min="1900-01-01" max="2100-12-31" autocomplete="bday" required aria-describedby="birth-date-hint birth-date-error">
+          <button class="button" type="submit">내 캐릭터 찾기</button>
+        </div>
+        <p class="character-error" id="birth-date-error"></p>
+      </form>
+      <noscript><p>이 페이지는 브라우저 안에서 캐릭터를 계산하려고 자바스크립트를 써요. 자바스크립트를 켜 주세요.</p></noscript>
+    </section>
+
+    <section class="character-result" id="character-result" data-assets="../../assets/" aria-labelledby="character-name" hidden>
+      <img id="character-image" src="../../assets/characters/gap_happy.webp" alt="" width="240" height="240">
+      <p class="character-label" id="character-label">나의 캐릭터</p>
+      <h2 id="character-name">나무</h2>
+      <p class="character-note" id="character-note"></p>
+      <p class="character-tag"><span id="character-hanja"></span> <span id="character-meaning"></span></p>
+      <p class="character-trait" id="character-trait"></p>
+      <p class="character-more" id="character-other-hint" hidden></p>
+      <p class="character-more">안드로이드 앱에서는 캐릭터의 표정이 그날의 기운에 따라 날마다 바뀌고, 태어난 시각과 곳까지 넣어 사주 여덟 글자를 모두 봐요.</p>
+      <div class="character-actions">
+        <a class="button" href="https://play.google.com/store/apps/details?id=app.sajubomi&amp;utm_source=web&amp;utm_medium=character">앱 받기</a>
+        <button class="button button-secondary" type="button" id="character-share">공유하기</button>
+      </div>
+      <p class="character-status" id="character-share-status" aria-live="polite"></p>
+      <p class="character-copy" id="character-share-fallback" hidden>
+        <label for="character-share-link" id="character-share-fallback-label">이 링크를 복사해 주세요:</label>
+        <input type="text" id="character-share-link" readonly>
+      </p>
+    </section>
+    <p class="visually-hidden" id="character-announce" role="status" aria-live="polite"></p>
+
+    <h2 class="section-title" id="ten-characters">열 캐릭터</h2>
+    <ul class="character-picker" aria-labelledby="ten-characters">
+      <li><a href="?c=gap" data-stem="gap"><img src="../../assets/characters/gap_happy.webp" alt="" width="240" height="240" loading="lazy">나무</a></li>
+      <li><a href="?c=eul" data-stem="eul"><img src="../../assets/characters/eul_happy.webp" alt="" width="240" height="240" loading="lazy">나리</a></li>
+      <li><a href="?c=byeong" data-stem="byeong"><img src="../../assets/characters/byeong_happy.webp" alt="" width="240" height="240" loading="lazy">해님</a></li>
+      <li><a href="?c=jeong" data-stem="jeong"><img src="../../assets/characters/jeong_happy.webp" alt="" width="240" height="240" loading="lazy">초롱</a></li>
+      <li><a href="?c=mu" data-stem="mu"><img src="../../assets/characters/mu_happy.webp" alt="" width="240" height="240" loading="lazy">뫼</a></li>
+      <li><a href="?c=gi" data-stem="gi"><img src="../../assets/characters/gi_happy.webp" alt="" width="240" height="240" loading="lazy">이랑</a></li>
+      <li><a href="?c=gyeong" data-stem="gyeong"><img src="../../assets/characters/gyeong_happy.webp" alt="" width="240" height="240" loading="lazy">단단</a></li>
+      <li><a href="?c=sin" data-stem="sin"><img src="../../assets/characters/sin_happy.webp" alt="" width="240" height="240" loading="lazy">보석</a></li>
+      <li><a href="?c=im" data-stem="im"><img src="../../assets/characters/im_happy.webp" alt="" width="240" height="240" loading="lazy">바다</a></li>
+      <li><a href="?c=gye" data-stem="gye"><img src="../../assets/characters/gye_happy.webp" alt="" width="240" height="240" loading="lazy">이슬</a></li>
+    </ul>
+
+    <section class="cards cards-wide" aria-label="캐릭터에 대해">
+      <div class="card">
+        <h2>캐릭터는 어디에서 나왔나요</h2>
+        <p>사주는 태어난 해·달·날·시의 네 기둥(사주팔자)으로 읽는 풀이예요. 이 캐릭터는 내가 태어난 날에서 나왔어요. 사주에서는 태어난 날의 글자가 나를 나타내요. 이 글자는 천간(天干) 열 글자 가운데 하나예요. 날마다 천간이 하나씩 있고, 열흘을 한 바퀴로 돌아와요. 태어난 날의 천간이 내 캐릭터를 정해요.</p>
+      </div>
+      <div class="card">
+        <h2>알아 둘 것</h2>
+        <ul>
+          <li>날짜만으로 본 캐릭터예요. 자정 가까이에 태어났다면 앱에서는 앞날이나 다음 날의 캐릭터가 나올 수 있어요. 앱은 태어난 시각과 곳(그곳의 시간대와 해의 시각)까지 쓰기 때문이에요.</li>
+          <li>태어난 날짜는 이 브라우저 안에서만 계산하고 어디에도 보내지 않아요. 공유 링크에는 캐릭터만 담겨요. 이 페이지에는 분석 도구도 광고도 없어요. 다만 페이지를 올려 둔 GitHub Pages는 여느 웹사이트처럼 접속 기록(IP 주소, 브라우저 정보 같은 것)을 받아요.</li>
+          <li>캐릭터는 바뀌지 않는 바탕이에요. 표정은 그날의 기운에 따라 날마다 달라져요. 캐릭터는 사주의 한 부분이에요. 내 성격의 전부는 아니에요.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="note">
+      <p>앱처럼 재미로 보는 콘텐츠예요. 풀이는 전통 사주의 생각을 따른 것이고, 예언이나 조언이 아니에요.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; Dion Labs. 문의: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
+      <p><a href="../">사주보미 소개</a> · <a href="../../privacy/ko/">개인정보처리방침</a> · <a href="../../character/" lang="en" hreflang="en">English</a></p>
+      <p>글꼴: Nunito (<a href="../../assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/character.js"></script>
+</body>
+</html>

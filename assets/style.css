@@ -1,4 +1,4 @@
-/* 소개 페이지와 개인정보처리방침이 함께 쓰는 모양. 색은 앱과 같다 (app/lib/ui/theme/app_theme.dart). */
+/* 소개 페이지, 개인정보처리방침, 캐릭터 찾기 페이지가 함께 쓰는 모양. 색은 앱과 같다 (app/lib/ui/theme/app_theme.dart). */
 
 @font-face {
   font-family: "Nunito";
@@ -262,6 +262,248 @@ button:focus-visible {
 .summary ul {
   margin: 0;
   padding-left: 20px;
+}
+
+/* 사주 캐릭터 찾기 (character/, ko/character/. 세부실행계획 2장 65번 ⑧) */
+/* 오행의 옅은 색과 짙은 색은 앱과 같다 (app/lib/ui/theme/element_colors.dart의 standard). */
+.character-result[data-element="wood"] { --element-soft: #dff3e3; --element-strong: #2e9552; }
+.character-result[data-element="fire"] { --element-soft: #ffe4d6; --element-strong: #e4512d; }
+.character-result[data-element="earth"] { --element-soft: #f7e8c9; --element-strong: #ad781c; }
+.character-result[data-element="metal"] { --element-soft: #eceff3; --element-strong: #76828f; }
+.character-result[data-element="water"] { --element-soft: #dce8fb; --element-strong: #2f6fde; }
+
+.character-form {
+  max-width: 420px;
+  margin: 24px auto 0;
+  text-align: left;
+}
+
+.character-form label {
+  display: block;
+  font-weight: 800;
+}
+
+.character-hint {
+  margin: 2px 0 8px;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.character-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.character-row input {
+  flex: 1 1 180px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 2px solid var(--outline);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+.character-row input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.character-row input[aria-invalid="true"] {
+  border-color: var(--accent);
+}
+
+.character-row .button {
+  flex: 1 1 auto;
+  margin-top: 0;
+}
+
+button.button {
+  border: 0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button.button-secondary {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.character-error {
+  min-height: 1.6em;
+  margin: 6px 0 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.character-result {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin: 8px 0 24px;
+  text-align: center;
+  scroll-margin-top: 16px;
+}
+
+.character-result img {
+  display: block;
+  width: 200px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: var(--element-soft, var(--accent-soft));
+}
+
+.character-label {
+  margin: 0;
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.character-result h2 {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 40px);
+  line-height: 1.2;
+}
+
+.character-note {
+  margin: 2px 0 10px;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.character-tag {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--element-soft, var(--accent-soft));
+  box-shadow: inset 0 0 0 1.5px var(--element-strong, var(--accent));
+  font-weight: 800;
+}
+
+.character-trait {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.character-more {
+  max-width: 520px;
+  margin: 10px auto 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.character-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.character-actions .button {
+  margin-top: 0;
+}
+
+.character-status {
+  min-height: 1.6em;
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.character-copy {
+  margin: 8px auto 0;
+  max-width: 420px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.character-copy input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--outline);
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+}
+
+.character-picker {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.character-picker a {
+  display: block;
+  height: 100%;
+  padding: 8px 4px 6px;
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.character-picker img {
+  display: block;
+  width: 100%;
+  max-width: 96px;
+  height: auto;
+  margin: 0 auto 2px;
+}
+
+@media (max-width: 400px) {
+  .character-picker {
+    gap: 4px;
+  }
+
+  /* 320px 화면에서도 가장 긴 이름(Chorong)이 한 줄에 들어가게 한다. */
+  .character-picker a {
+    padding: 6px 0 4px;
+    border-radius: 12px;
+    font-size: 12px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.section-title {
+  margin: 32px 0 0;
+  font-size: 21px;
+}
+
+/* 화면에는 보이지 않고 화면 읽기만 읽는 글. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 /* 발 */

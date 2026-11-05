@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What's your Korean saju character? Four Pillars (Bazi) finder — Saju Bomi</title>
+  <meta name="description" content="Find your Korean saju character from your birth date. In saju, the Korean Four Pillars of Destiny (Bazi), the day you were born has one of ten stems, and each has a nature character. A free K-fortune for fun, worked out in your browser.">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" hreflang="ko" href="../ko/character/">
+  <!-- Open Graph: 이 페이지는 정적이라 링크 미리보기를 만드는 크롤러에게 주소(?c=byeong)마다 다른 그림을 줄 수 없다.
+       그래서 페이지 전체의 기본 그림 하나를 쓴다. 캐릭터마다의 그림 열 장(assets/og/<천간>.png, 1200×630)은
+       tools/store/og_images.py가 만들어 두었고, 나중에 캐릭터마다 페이지를 따로 둘 때 쓴다. 미리보기 그림은
+       절대 주소여야 해서 공개 주소(https://whmafter.github.io/)를 적었다. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Saju Bomi">
+  <meta property="og:title" content="What's your Korean saju character?">
+  <meta property="og:description" content="Enter your birth date and meet one of ten nature characters from Korean saju, the Four Pillars of Destiny. A K-fortune for fun.">
+  <meta property="og:url" content="https://whmafter.github.io/character/">
+  <meta property="og:image" content="https://whmafter.github.io/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The ten Saju Bomi characters and the question: What's your Korean saju character?">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Saju Bomi</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="../privacy/">Privacy</a>
+        <a href="../ko/character/" lang="ko" hreflang="ko">한국어</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>What's your Korean saju character?</h1>
+      <p>In Korean saju, the day you were born has one of ten signs, and Saju Bomi gives each one a nature character. Enter your birth date to meet yours.</p>
+      <!-- 날짜 칸에 name이 없어서, 스크립트가 꺼져 있어도 날짜가 주소에 실려 가지 않는다. -->
+      <form class="character-form" id="character-form" novalidate>
+        <label for="birth-date">Your birth date</label>
+        <p class="character-hint" id="birth-date-hint">Use the date where you were born, on the solar (Gregorian) calendar.</p>
+        <div class="character-row">
+          <input type="date" id="birth-date" min="1900-01-01" max="2100-12-31" autocomplete="bday" required aria-describedby="birth-date-hint birth-date-error">
+          <button class="button" type="submit">Find my character</button>
+        </div>
+        <p class="character-error" id="birth-date-error"></p>
+      </form>
+      <noscript><p>This page needs JavaScript to work out your character in your browser.</p></noscript>
+    </section>
+
+    <section class="character-result" id="character-result" data-assets="../assets/" aria-labelledby="character-name" hidden>
+      <img id="character-image" src="../assets/characters/gap_happy.webp" alt="" width="240" height="240">
+      <p class="character-label" id="character-label">Your character</p>
+      <h2 id="character-name">Namu</h2>
+      <p class="character-note" id="character-note"></p>
+      <p class="character-tag"><span id="character-hanja" lang="ko"></span> <span id="character-meaning"></span></p>
+      <p class="character-trait" id="character-trait"></p>
+      <p class="character-more" id="character-other-hint" hidden></p>
+      <p class="character-more">In the Android app, your character's face changes with each day's energy, and your birth time and place complete your eight signs.</p>
+      <div class="character-actions">
+        <a class="button" href="https://play.google.com/store/apps/details?id=app.sajubomi&amp;utm_source=web&amp;utm_medium=character">Get the app</a>
+        <button class="button button-secondary" type="button" id="character-share">Share</button>
+      </div>
+      <p class="character-status" id="character-share-status" aria-live="polite"></p>
+      <p class="character-copy" id="character-share-fallback" hidden>
+        <label for="character-share-link" id="character-share-fallback-label">Copy this link:</label>
+        <input type="text" id="character-share-link" readonly>
+      </p>
+    </section>
+    <p class="visually-hidden" id="character-announce" role="status" aria-live="polite"></p>
+
+    <h2 class="section-title" id="ten-characters">The ten characters</h2>
+    <ul class="character-picker" aria-labelledby="ten-characters">
+      <li><a href="?c=gap" data-stem="gap"><img src="../assets/characters/gap_happy.webp" alt="" width="240" height="240" loading="lazy">Namu</a></li>
+      <li><a href="?c=eul" data-stem="eul"><img src="../assets/characters/eul_happy.webp" alt="" width="240" height="240" loading="lazy">Nari</a></li>
+      <li><a href="?c=byeong" data-stem="byeong"><img src="../assets/characters/byeong_happy.webp" alt="" width="240" height="240" loading="lazy">Haenim</a></li>
+      <li><a href="?c=jeong" data-stem="jeong"><img src="../assets/characters/jeong_happy.webp" alt="" width="240" height="240" loading="lazy">Chorong</a></li>
+      <li><a href="?c=mu" data-stem="mu"><img src="../assets/characters/mu_happy.webp" alt="" width="240" height="240" loading="lazy">Moe</a></li>
+      <li><a href="?c=gi" data-stem="gi"><img src="../assets/characters/gi_happy.webp" alt="" width="240" height="240" loading="lazy">Irang</a></li>
+      <li><a href="?c=gyeong" data-stem="gyeong"><img src="../assets/characters/gyeong_happy.webp" alt="" width="240" height="240" loading="lazy">Dandan</a></li>
+      <li><a href="?c=sin" data-stem="sin"><img src="../assets/characters/sin_happy.webp" alt="" width="240" height="240" loading="lazy">Boseok</a></li>
+      <li><a href="?c=im" data-stem="im"><img src="../assets/characters/im_happy.webp" alt="" width="240" height="240" loading="lazy">Bada</a></li>
+      <li><a href="?c=gye" data-stem="gye"><img src="../assets/characters/gye_happy.webp" alt="" width="240" height="240" loading="lazy">Iseul</a></li>
+    </ul>
+
+    <section class="cards cards-wide" aria-label="About your character">
+      <div class="card">
+        <h2>Where your character comes from</h2>
+        <p>Saju is the Korean way of reading the Four Pillars of Destiny, known in Chinese as Bazi: your birth year, month, day and hour each make a pillar of two signs. Your character comes from the day you were born. In saju, that day's sign stands for you. This sign is one of the ten Heavenly Stems (天干). Each day has one, and they come around in a ten-day cycle. The stem of your birth day decides your character.</p>
+      </div>
+      <div class="card">
+        <h2>Good to know</h2>
+        <ul>
+          <li>This is your character from the date alone. If you were born close to midnight, the app may give you the character of the day before or after, because it also uses your birth time and place (the local time zone and the sun's time there).</li>
+          <li>Your birth date is worked out in your browser and is not sent anywhere. The share link holds only the character. This page has no analytics or ads; GitHub Pages, which hosts it, receives the usual access logs (such as IP address and browser).</li>
+          <li>Your character stays the same. Its mood changes with each day's energy. It is one part of your saju, not your whole personality.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="note">
+      <p>For entertainment, like the app. The readings follow traditional saju ideas. They are not predictions or advice.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; Dion Labs. Contact: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
+      <p><a href="../">About Saju Bomi</a> · <a href="../privacy/">Privacy policy</a> · <a href="../ko/character/" lang="ko" hreflang="ko">한국어</a></p>
+      <p>Font: Nunito, under the <a href="../assets/fonts/OFL.txt">SIL Open Font License</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/character.js"></script>
+</body>
+</html>

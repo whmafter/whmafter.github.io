@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Saju Bomi match invite</title>
+  <meta name="description" content="Open a Saju Bomi match invite in the app.">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* 궁합 초대 페이지 (세부실행계획 A-67, 2장 57번). 코드는 주소의 # 뒤라 서버로 가지 않고, 이 페이지는 아무것도
+       저장하거나 보내지 않는다. 분석 도구·광고·바깥 요청이 없다. */
+    .invite { padding: 40px 0 32px; text-align: center; }
+    .invite h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 0 0 12px; }
+    .invite p { color: var(--ink-soft); margin: 0 auto 12px; max-width: 560px; }
+    .code-box {
+      display: inline-block; margin: 16px 0 8px; padding: 12px 24px;
+      background: var(--surface); border: 1px solid var(--outline); border-radius: var(--radius);
+    }
+    .code-box .label { display: block; font-size: 14px; color: var(--ink-soft); }
+    .code-box .code { display: block; font-size: 32px; font-weight: 800; letter-spacing: 3px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 16px 0; }
+    .actions .button { margin-top: 0; }
+    .button.secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
+    button.button { border: 0; font: inherit; font-weight: 800; cursor: pointer; }
+    button.button.secondary { border: 2px solid var(--accent); }
+    .copied { min-height: 1.6em; color: var(--ink-soft); font-size: 15px; }
+    .language-switch {
+      background: none; border: 0; padding: 10px 2px; cursor: pointer;
+      color: var(--accent); font: inherit; font-weight: 700;
+    }
+    /* 화면에는 보이지 않고 화면 읽기만 읽는 글 (코드를 한 글자씩 읽게 한다). */
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" id="brand" href="../">Saju Bomi</a>
+      <nav class="site-nav" aria-label="Site">
+        <button type="button" class="language-switch" id="switch-language" lang="ko">한국어</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 영어 -->
+    <section class="invite" lang="en" data-language="en">
+      <h1>You're invited to a match</h1>
+      <p>Whoever sent this link invited you to see your match with them in Saju Bomi. <span data-holds="eight">The code holds only the eight characters of their saju chart.</span><span data-holds="six" hidden>The code holds only six characters of their saju chart (no birth time).</span></p>
+      <div data-when="code">
+        <div class="code-box"><span class="label">Invite code</span><span class="code" data-code aria-hidden="true"></span><span class="visually-hidden" data-code-spoken></span></div>
+        <div class="actions">
+          <a class="button" data-open-app href="#" hidden>Open in the app</a>
+          <button class="button secondary" type="button" data-copy>Copy code</button>
+          <a class="button secondary" href="https://play.google.com/store/apps/details?id=app.sajubomi">Get it on Google Play</a>
+        </div>
+        <p class="copied" data-copied aria-live="polite"></p>
+        <p data-not-android hidden>Saju Bomi is an Android app. Open this link on an Android phone.</p>
+        <p>New to the app? Get Saju Bomi from Google Play and enter your details on the first screen. Then open this link again, or enter the code under Match &gt; See a match from a code.</p>
+      </div>
+      <p data-when="broken" hidden>This link has no invite code that can be read. Ask the sender to send the link again.</p>
+      <div class="note">
+        <p>The code is after the # in the address, so it never reaches the web server. This page doesn't save or send anything.</p>
+      </div>
+    </section>
+
+    <!-- 한국어 -->
+    <section class="invite" lang="ko" data-language="ko" hidden>
+      <h1>궁합 초대가 왔어요</h1>
+      <p>이 링크를 보낸 사람이 사주보미에서 나와의 궁합을 보자고 초대했어요. <span data-holds="eight">코드에는 그 사람의 사주 여덟 글자만 담겨 있어요.</span><span data-holds="six" hidden>코드에는 그 사람의 사주 여섯 글자만 담겨 있어요 (태어난 시각은 없어요).</span></p>
+      <div data-when="code">
+        <div class="code-box"><span class="label">초대 코드</span><span class="code" data-code aria-hidden="true"></span><span class="visually-hidden" data-code-spoken></span></div>
+        <div class="actions">
+          <a class="button" data-open-app href="#" hidden>앱에서 열기</a>
+          <button class="button secondary" type="button" data-copy>코드 복사</button>
+          <a class="button secondary" href="https://play.google.com/store/apps/details?id=app.sajubomi">Google Play에서 받기</a>
+        </div>
+        <p class="copied" data-copied aria-live="polite"></p>
+        <p data-not-android hidden>사주보미는 안드로이드 앱이에요. 안드로이드 폰에서 이 링크를 열어 주세요.</p>
+        <p>앱이 처음이면 Google Play에서 사주보미를 받고 처음 화면에서 내 정보를 넣어 주세요. 그다음 이 링크를 다시 열거나, 궁합 탭의 '받은 코드로 궁합 보기'에 코드를 넣어 주세요.</p>
+      </div>
+      <p data-when="broken" hidden>이 링크에서 초대 코드를 읽지 못했어요. 보낸 사람에게 링크를 다시 받아 주세요.</p>
+      <div class="note">
+        <p>코드는 주소의 # 뒤에 있어 웹 서버로 가지 않아요. 이 페이지는 아무것도 저장하거나 보내지 않아요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; Dion Labs. <a href="../privacy/">Privacy policy</a> · <a href="../privacy/ko/" lang="ko" hreflang="ko">개인정보처리방침</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // 크록퍼드 32진수 (앱과 같다: app/lib/interpret/invite_code.dart). 검사값은 앱이 본다.
+      var alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+      var raw = location.hash.replace(/^#/, '');
+      try { raw = decodeURIComponent(raw); } catch (e) { /* 잘못 적힌 퍼센트 글자: 받은 그대로 읽는다 */ }
+      var text = raw.replace(/[\s-]/g, '').toUpperCase().replace(/[IL]/g, '1').replace(/O/g, '0');
+      var readable = text.length === 8 && text.split('').every(function (c) { return alphabet.indexOf(c) >= 0; });
+      var display = readable ? text.slice(0, 4) + '-' + text.slice(4) : '';
+      // 시주 칸(앞에서 21~27번째 비트)이 127이면 시주가 없는 여섯 글자 코드다. 40비트는 자바스크립트의 수에 그대로 담긴다.
+      // 앱의 테스트가 같은 판정을 못 박는다 (app/test/interpret/invite_code_test.dart의 "꼴을 못 박는다").
+      var value = 0;
+      if (readable) text.split('').forEach(function (c) { value = value * 32 + alphabet.indexOf(c); });
+      var six = readable && Math.floor(value / 256 / 32) % 128 === 127;
+      var android = /Android/i.test(navigator.userAgent);
+      var play = 'https://play.google.com/store/apps/details?id=app.sajubomi';
+      var intent = 'intent://invite/' + text + '#Intent;scheme=sajubomi;package=app.sajubomi;S.browser_fallback_url=' +
+        encodeURIComponent(play) + ';end';
+
+      function each(selector, fn) {
+        Array.prototype.forEach.call(document.querySelectorAll(selector), fn);
+      }
+
+      each('[data-when="code"]', function (el) { el.hidden = !readable; });
+      each('[data-when="broken"]', function (el) { el.hidden = readable; });
+      each('[data-code]', function (el) { el.textContent = display; });
+      // 화면 읽기는 코드를 한 글자씩 읽는다 (한 낱말로 읽으면 알아듣기 어렵다).
+      each('[data-code-spoken]', function (el) { el.textContent = text.split('').join(' '); });
+      each('[data-holds]', function (el) {
+        el.hidden = !readable || el.getAttribute('data-holds') !== (six ? 'six' : 'eight');
+      });
+      each('[data-open-app]', function (el) {
+        el.hidden = !android || !readable;
+        if (readable) el.href = intent;
+      });
+      each('[data-not-android]', function (el) { el.hidden = android; });
+
+      function say(section, ko, en) {
+        section.querySelector('[data-copied]').textContent = section.getAttribute('data-language') === 'ko' ? ko : en;
+      }
+      // 클립보드를 쓸 수 없거나 브라우저가 거부하면 코드를 골라 두어 사용자가 복사하게 한다.
+      function select(section) {
+        var range = document.createRange();
+        range.selectNodeContents(section.querySelector('[data-code]'));
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        say(section, '코드를 골라 두었어요. 복사해 주세요.', 'The code is selected. Copy it from the menu.');
+      }
+      each('[data-copy]', function (button) {
+        button.addEventListener('click', function () {
+          var section = button.closest('[data-language]');
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(display).then(function () {
+              say(section, '코드를 복사했어요', 'Code copied');
+            }, function () { select(section); });
+          } else {
+            select(section);
+          }
+        });
+      });
+
+      // 언어: 브라우저의 언어가 한국어면 한국어. 위쪽의 단추로 바꿀 수 있다 (기억하지 않는다).
+      var language = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      function show(code) {
+        document.documentElement.lang = code;
+        each('[data-language]', function (el) { el.hidden = el.getAttribute('data-language') !== code; });
+        var other = document.getElementById('switch-language');
+        other.textContent = code === 'ko' ? 'English' : '한국어';
+        other.lang = code === 'ko' ? 'en' : 'ko';
+        document.title = code === 'ko' ? '사주보미 궁합 초대' : 'Saju Bomi match invite';
+        document.getElementById('brand').href = code === 'ko' ? '../ko/' : '../';
+      }
+      var current = /^ko/i.test(language) ? 'ko' : 'en';
+      show(current);
+      document.getElementById('switch-language').addEventListener('click', function () {
+        current = current === 'ko' ? 'en' : 'ko';
+        show(current);
+      });
+    })();
+  </script>
+</body>
+</html>
