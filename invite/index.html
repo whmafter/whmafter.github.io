@@ -57,11 +57,11 @@
         <div class="actions">
           <a class="button" data-open-app href="#" hidden>Open in the app</a>
           <button class="button secondary" type="button" data-copy>Copy code</button>
-          <a class="button secondary" href="https://play.google.com/store/apps/details?id=app.sajubomi">Get it on Google Play</a>
+          <a class="button secondary" href="../join/">Join the test</a>
         </div>
         <p class="copied" data-copied aria-live="polite"></p>
         <p data-not-android hidden>Saju Bomi is an Android app. Open this link on an Android phone.</p>
-        <p>New to the app? Get Saju Bomi from Google Play and enter your details on the first screen. Then open this link again, or enter the code under Match &gt; See a match from a code.</p>
+        <p>New to the app? Saju Bomi is in a closed test on Google Play for now, so join the test to install it, then enter your details on the first screen. Then open this link again, or enter the code under Match &gt; See a match from a code.</p>
       </div>
       <p data-when="broken" hidden>This link has no invite code that can be read. Ask the sender to send the link again.</p>
       <div class="note">
@@ -78,11 +78,11 @@
         <div class="actions">
           <a class="button" data-open-app href="#" hidden>앱에서 열기</a>
           <button class="button secondary" type="button" data-copy>코드 복사</button>
-          <a class="button secondary" href="https://play.google.com/store/apps/details?id=app.sajubomi">Google Play에서 받기</a>
+          <a class="button secondary" href="../ko/join/">테스트 참여하기</a>
         </div>
         <p class="copied" data-copied aria-live="polite"></p>
         <p data-not-android hidden>사주보미는 안드로이드 앱이에요. 안드로이드 폰에서 이 링크를 열어 주세요.</p>
-        <p>앱이 처음이면 Google Play에서 사주보미를 받고 처음 화면에서 내 정보를 넣어 주세요. 그다음 이 링크를 다시 열거나, 궁합 탭의 '받은 코드로 궁합 보기'에 코드를 넣어 주세요.</p>
+        <p>앱이 처음이면, 지금은 구글 플레이에서 비공개 테스트 중이라 테스트에 참여해 사주보미를 설치하고 처음 화면에서 내 정보를 넣어 주세요. 그다음 이 링크를 다시 열거나, 궁합 탭의 '받은 코드로 궁합 보기'에 코드를 넣어 주세요.</p>
       </div>
       <p data-when="broken" hidden>이 링크에서 초대 코드를 읽지 못했어요. 보낸 사람에게 링크를 다시 받아 주세요.</p>
       <div class="note">
@@ -112,9 +112,11 @@
       if (readable) text.split('').forEach(function (c) { value = value * 32 + alphabet.indexOf(c); });
       var six = readable && Math.floor(value / 256 / 32) % 128 === 127;
       var android = /Android/i.test(navigator.userAgent);
-      var play = 'https://play.google.com/store/apps/details?id=app.sajubomi';
+      // 앱이 없으면 가는 곳. 비공개 테스트 동안은 참여 안내 (세부실행계획 2장 69번 ③). 공개 뒤에는 Play 페이지로 되돌린다.
+      var korean = /^ko/i.test((navigator.languages && navigator.languages[0]) || navigator.language || '');
+      var fallback = new URL(korean ? '../ko/join/' : '../join/', location.href).href;
       var intent = 'intent://invite/' + text + '#Intent;scheme=sajubomi;package=app.sajubomi;S.browser_fallback_url=' +
-        encodeURIComponent(play) + ';end';
+        encodeURIComponent(fallback) + ';end';
 
       function each(selector, fn) {
         Array.prototype.forEach.call(document.querySelectorAll(selector), fn);
