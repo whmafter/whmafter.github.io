@@ -69,6 +69,9 @@
       partnerNeeded: "Enter the other person's birthday to see your match.",
       more: 'See more',
       less: 'Show less',
+      // 전체사주에서만 남은 접힌 칸 둘 (2장 77번 ⑤): 사주를 아는 사람의 표와 시각을 모를 때의 도구.
+      tablesMore: 'See the almanac tables',
+      explorerMore: "Don't know your birth time? See it by time of day",
       basis: 'Basis',
       when: function (strength) { return 'when ' + strength.charAt(0).toLowerCase() + strength.slice(1); },
       basisToggle: 'How it was read',
@@ -135,6 +138,9 @@
       partnerNeeded: '상대의 생일을 넣으면 궁합을 봐요.',
       more: '자세히 보기',
       less: '접기',
+      // 전체사주에서만 남은 접힌 칸 둘 (2장 77번 ⑤): 사주를 아는 사람의 표와 시각을 모를 때의 도구.
+      tablesMore: '만세력 표 보기',
+      explorerMore: '태어난 시각을 모르면: 시간대별로 보기',
       basis: '근거',
       when: function (strength) { return strength + '일 때'; },
       basisToggle: '어떻게 읽었나요',
@@ -1066,10 +1072,13 @@
     }
 
     var parts = RENDER[kind](output[kind], whys, output);
-    // 요약: 늘 보인다.
+    // 요약 다음에 나머지도 처음부터 모두 보인다 (2장 77번 ⑤, 사용자 "자세히 보기 버튼 없이 더 많은 정보가 보여지게"). 전체사주의
+    // 만세력 표와 출생 시간 탐색기만 자기 이름의 접힌 칸이다.
     section.appendChild(parts.summary);
-    // 자세히 보기: 나머지 모두를 하나로 접는다.
-    if (parts.detail && parts.detail.childNodes.length) section.appendChild(fold(parts.detail));
+    if (parts.detail && parts.detail.childNodes.length) {
+      parts.detail.classList.add('saju-detail');
+      section.appendChild(parts.detail);
+    }
     section.appendChild(appLine(output.appMore));
     section.appendChild(notesOf(output, input, kind));
     result.appendChild(section);
@@ -1077,10 +1086,11 @@
     resultTools.hidden = false;
   }
 
-  // "자세히 보기" 하나: 단추를 누르면 펼치고 "접기"로 바뀐다.
-  function fold(body) {
+  // 접힌 칸 하나: 단추를 누르면 펼치고 "접기"로 바뀐다. [more]는 단추의 이름(없으면 "자세히 보기").
+  function fold(body, more) {
+    var label = more || texts.more;
     var box = element('div', 'saju-fold');
-    var button = element('button', 'saju-fold-button', texts.more);
+    var button = element('button', 'saju-fold-button', label);
     button.type = 'button';
     body.id = nextId('saju-fold');
     body.className = 'saju-fold-body';
@@ -1091,7 +1101,7 @@
       var openNow = body.hidden;
       body.hidden = !openNow;
       button.setAttribute('aria-expanded', openNow ? 'true' : 'false');
-      button.textContent = openNow ? texts.less : texts.more;
+      button.textContent = openNow ? texts.less : label;
     });
     return append(box, button, body);
   }
@@ -1469,7 +1479,8 @@
     append(breakdown, match.timeUnknown ? element('p', 'saju-step', match.timeUnknown) : null, soft(match.scoreNote), soft(match.terms));
     append(layout, left, breakdown);
     append(detail, layout, lockedCard(output.appMore));
-    panel.appendChild(fold(detail));
+    detail.className = 'saju-detail';
+    panel.appendChild(detail);
     return panel;
   }
 
@@ -1520,8 +1531,8 @@
     if (saju.type) detail.appendChild(typeCard(saju.type));
     detail.appendChild(coverCard(saju));
     if (saju.nature) detail.appendChild(natureCard(saju.nature, whys, saju.cover.hourNote));
-    if (saju.explorer) detail.appendChild(explorerCard(saju.explorer));
-    if (saju.detail) detail.appendChild(tablesCard(saju.detail));
+    if (saju.explorer) detail.appendChild(fold(append(element('div'), explorerCard(saju.explorer)), texts.explorerMore));
+    if (saju.detail) detail.appendChild(fold(append(element('div'), tablesCard(saju.detail)), texts.tablesMore));
     return { summary: summary, detail: detail };
   }
 

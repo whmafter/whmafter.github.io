@@ -4432,3 +4432,13 @@ p + .saju-why-holder {
     opacity: 0.45;
   }
 }
+
+/* 자세한 내용도 처음부터 (2장 77번 ⑤): 요약 다음의 카드들, 카드 사이 1rem. 전체사주의 접힌 칸 둘은 그 사이에 있다. */
+.saju-detail > * + *,
+.saju-section .saju-detail > .card + .card {
+  margin-top: 1rem;
+}
+
+.saju-detail .saju-fold-body > * + * {
+  margin-top: 1rem;
+}
