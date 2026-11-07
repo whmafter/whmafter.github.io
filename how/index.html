@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- tools/web/build_pages.py가 만든다. 손으로 고치지 않는다 (세부실행계획 2장 71~73번). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- saju-head:start -->
+  <title>How we calculate – the rules and checks behind Saju Bomi | Saju Bomi</title>
+  <meta name="description" content="The calculation rules this website and the Saju Bomi app use, and how the calculation was checked.">
+  <link rel="stylesheet" href="/assets/style.css?v=20261107o">
+  <link rel="canonical" href="https://whmafter.github.io/how/">
+  <link rel="alternate" hreflang="en" href="https://whmafter.github.io/how/">
+  <link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/how/">
+  <link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/how/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Saju Bomi">
+  <meta property="og:title" content="How we calculate">
+  <meta property="og:description" content="The calculation rules this website and the Saju Bomi app use, and how the calculation was checked.">
+  <meta property="og:url" content="https://whmafter.github.io/how/">
+  <meta property="og:image" content="https://whmafter.github.io/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The ten Saju Bomi characters">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- saju-head:end -->
+</head>
+<body>
+  <!-- saju-header:start -->
+  <header class="site-header">
+    <div class="wrap wrap-wide">
+      <a class="brand" href="/">Saju Bomi</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="/app/">Web vs. app</a>
+        <a href="/ko/how/" lang="ko" hreflang="ko">한국어</a>
+      </nav>
+    </div>
+  </header>
+  <!-- saju-header:end -->
+
+  <main class="wrap wrap-wide">
+  <section class="page-hero">
+      <h1>How we calculate</h1>
+      <p class="page-lead">The rules this website and the app use, and how we checked the calculation.</p>
+    </section>
+    <section class="page-section" aria-labelledby="how-web-title">
+      <h2 id="how-web-title">How this website calculates</h2>
+      <ul class="page-list">
+        <li>It uses the Saju Bomi app's own calculation code, so the same birthday gives the same result as the app.</li>
+        <li>If you choose your country of birth, it uses that country's time zone; if not, your device's time zone. It doesn't adjust for your birth city's sun time (longitude). Adding your birth city in the app makes it more precise.</li>
+        <li>The detailed tables, the &quot;Why?&quot; behind each paragraph and the birth-time explorer are checked against the app's own screens, too.</li>
+        <li>Without a birth time, it shows only what doesn't depend on the hour, and says so.</li>
+        <li>For fun and entertainment only.</li>
+        <li>We check that this website gives the app's exact results by comparing it with the app's own functions: 12,206 cases in two languages, no differences (2026-11-07).</li>
+      </ul>
+    </section>
+    <section class="page-section" aria-labelledby="how-verify-title">
+      <h2 id="how-verify-title">How this app checks its calculations</h2>
+      <p class="page-soft">Every time the app changes, tests compare its solar-term times and four pillars with separate calculations. This checks that the calculation is right; it doesn't mean the readings come true.</p>
+      <div class="page-items">
+        <div class="page-item"><h3>Solar terms (1900–2100)</h3><p>The app holds the start times of 2,412 solar terms, computed from NASA JPL's DE440s ephemeris. Against a separate astronomical calculation they differ by 0.25 seconds on average and 0.53 seconds at most.</p></div>
+        <div class="page-item"><h3>Four pillars</h3><p>Tests compare them with two other calculation libraries: 5,000 randomly chosen births (lunar-python) and 2,000 births in Korea (manseryeok-js). Cases where a library follows a different rule (within minutes of a solar term, how the zi hour is split, and so on) are marked and left out of that comparison.</p></div>
+        <div class="page-item"><h3>Seoul and other cities</h3><p>1,850 births in Seoul and 8 other cities, each calculated with both zi-hour rules and with longitude correction on and off (7,400 charts), all matched the astronomical calculation (October 2026).</p></div>
+        <div class="page-item"><h3>Daylight saving and standard time</h3><p>Daylight saving and standard time come from the time-zone records (IANA time zone data) for that place and date. The result is shown above under “Time used”.</p></div>
+        <div class="page-item"><h3>Same chart, same words</h3><p>The same person, day and settings always give the same reading. Nothing is picked at random.</p></div>
+      </div>
+    </section>
+    <p class="page-soft page-notice">For fun and entertainment only.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap-wide">
+      <p class="site-footer-links"><a href="/">About Saju Bomi</a> · <a href="/app/">Web vs. app</a> · <a href="/how/">How we calculate</a> · <a href="/character/">Find your character</a> · <a href="/join/">Join the test</a> · <a href="/privacy/">Privacy</a> · <a href="/ko/how/" lang="ko" hreflang="ko">한국어</a></p>
+      <p>&copy; Dion Labs. Contact: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
+      <p>Font: Pretendard (<a href="/assets/fonts/pretendard/OFL.txt">SIL Open Font License</a>), Nunito (<a href="/assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+    </div>
+  </footer>
+  <!-- cf-beacon:start -->
+  <!-- 방문 수 세기 (Cloudflare Web Analytics, 쿠키·브라우저 저장소 없음). 넣은 생일과 결과는 주소에 없고 이것이 보내는 것에도 없다 (tools/web/fortune_page_check.py가 본다). -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "181ca29e1797481181c7d4cf67441efc"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- cf-beacon:end -->
+</body>
+</html>

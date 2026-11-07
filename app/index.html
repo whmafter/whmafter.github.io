@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- tools/web/build_pages.py가 만든다. 손으로 고치지 않는다 (세부실행계획 2장 71~73번). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- saju-head:start -->
+  <title>Web vs. app – what you see free here and what opens in the Saju Bomi app</title>
+  <meta name="description" content="What this website shows from the Saju Bomi app's free readings, what is free in the app, and what opens with a pass.">
+  <link rel="stylesheet" href="/assets/style.css?v=20261107o">
+  <link rel="canonical" href="https://whmafter.github.io/app/">
+  <link rel="alternate" hreflang="en" href="https://whmafter.github.io/app/">
+  <link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/app/">
+  <link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Saju Bomi">
+  <meta property="og:title" content="Web vs. app">
+  <meta property="og:description" content="What this website shows from the Saju Bomi app's free readings, what is free in the app, and what opens with a pass.">
+  <meta property="og:url" content="https://whmafter.github.io/app/">
+  <meta property="og:image" content="https://whmafter.github.io/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The ten Saju Bomi characters">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- saju-head:end -->
+</head>
+<body>
+  <!-- saju-header:start -->
+  <header class="site-header">
+    <div class="wrap wrap-wide">
+      <a class="brand" href="/">Saju Bomi</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="/app/" aria-current="page">Web vs. app</a>
+        <a href="/ko/app/" lang="ko" hreflang="ko">한국어</a>
+      </nav>
+    </div>
+  </header>
+  <!-- saju-header:end -->
+
+  <main class="wrap wrap-wide">
+  <section class="page-hero">
+      <h1>Web vs. app</h1>
+      <p class="page-lead">This website shows part of the app's free readings right away. The rest is free in the app or opens with a pass.</p>
+      <div class="page-faces" aria-hidden="true"><img src="/assets/characters/gap_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/eul_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/byeong_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/jeong_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/mu_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/gi_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/gyeong_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/sin_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/im_happy.webp" alt="" width="240" height="240" loading="lazy"><img src="/assets/characters/gye_happy.webp" alt="" width="240" height="240" loading="lazy"></div>
+    </section>
+
+    <!-- 비교표: 앱의 결제 전 화면의 비교표(purchase_screen.dart의 _CompareTable)와 같은 줄에 웹 칸을 더했다. 가격은 적지 않는다. -->
+    <section class="card saju-compare" aria-labelledby="saju-compare-title">
+      <h2 id="saju-compare-title">What you can see on the web and in the app</h2>
+      <table class="saju-table">
+        <thead>
+          <tr><th scope="col">Reading</th><th scope="col">Web</th><th scope="col">App (free)</th><th scope="col">Basic pass</th><th scope="col">Full pass</th></tr>
+        </thead>
+        <tbody>
+            <tr><th scope="row">Saju report</th><td data-label="Web"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Match readings</th><td data-label="Web"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Later days, D-days, good days, your week</th><td data-label="Web"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">2027 New Year fortune</th><td data-label="Web"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Life graph</th><td data-label="Web"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Year-by-year readings</th><td data-label="Web"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Question cards</th><td data-label="Web"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+            <tr><th scope="row">Love report</th><td data-label="Web"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="App (free)"><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span><span class="saju-cell-word">Partly free</span></td><td data-label="Basic pass"><span class="saju-cell saju-cell-none" aria-hidden="true">–</span><span class="saju-cell-word">Not included</span></td><td data-label="Full pass"><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span><span class="saju-cell-word">Included</span></td></tr>
+        </tbody>
+      </table>
+      <ul class="saju-legend" aria-hidden="true"><li><span class="saju-cell saju-cell-included" aria-hidden="true">✓</span> Included</li><li><span class="saju-cell saju-cell-some" aria-hidden="true">◐</span> Partly free</li><li><span class="saju-cell saju-cell-none" aria-hidden="true">–</span> Not included</li></ul>
+      <p class="fortune-soft fortune-small">Prices show on Google Play in your local currency. Passes are one-time purchases, not subscriptions.</p>
+    </section>
+    <div class="page-columns">
+      <section aria-labelledby="app-only-title">
+        <h2 id="app-only-title">Only in the app</h2>
+        <ul class="page-list">
+          <li><strong>Every day:</strong> yesterday, tomorrow and the next seven days, the twelve two-hour periods, your week in words, a monthly fortune calendar, good-day finder and a daily log.</li>
+          <li><strong>Your lifetime saju:</strong> the rest of the lifetime report (work, money, relationships, your life flow and more), the life graph, 150 question cards, the rest of the love report and a short primer.</li>
+          <li><strong>Family and friends:</strong> save the people you care about to see their characters and days, full match readings, group matches for 3–7 people and invite codes.</li>
+          <li><strong>Where you were born:</strong> add your birth city to adjust for the local sun time, plus a home screen widget and notifications.</li>
+        </ul>
+      </section>
+      <section aria-labelledby="app-free-title">
+        <h2 id="app-free-title">Free in the app</h2>
+        <ul class="page-list">
+          <li>Yesterday's, today's and tomorrow's readings</li>
+          <li>Character, personality summary, element chart, the report cover and your basic nature</li>
+          <li>Match score with its breakdown, what kind of pair you are, and today's match</li>
+          <li>Your 2027 flow, all five areas, and the months to use and to watch</li>
+          <li>The love report cover and how you are drawn to people and grow close</li>
+          <li>Daily log, saju type, your stars, a short primer</li>
+          <li>Saving family and friends, keeping readings you like, backup files</li>
+          <li>Home screen widget</li>
+        </ul>
+        <p class="page-soft">What you enter stays on your phone. No sign-up, no servers. <a href="/privacy/">Privacy</a></p>
+      </section>
+    </div>
+    <section class="page-cta">
+      <p>Saju Bomi is in a closed test on Google Play right now. Join the test to use the app.</p>
+      <p class="page-soft">The Saju Bomi app is for adults aged 18 and over.</p>
+      <p><a class="button" href="/join/">Join the test</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap-wide">
+      <p class="site-footer-links"><a href="/">About Saju Bomi</a> · <a href="/app/">Web vs. app</a> · <a href="/how/">How we calculate</a> · <a href="/character/">Find your character</a> · <a href="/join/">Join the test</a> · <a href="/privacy/">Privacy</a> · <a href="/ko/app/" lang="ko" hreflang="ko">한국어</a></p>
+      <p>&copy; Dion Labs. Contact: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
+      <p>Font: Pretendard (<a href="/assets/fonts/pretendard/OFL.txt">SIL Open Font License</a>), Nunito (<a href="/assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+    </div>
+  </footer>
+  <!-- cf-beacon:start -->
+  <!-- 방문 수 세기 (Cloudflare Web Analytics, 쿠키·브라우저 저장소 없음). 넣은 생일과 결과는 주소에 없고 이것이 보내는 것에도 없다 (tools/web/fortune_page_check.py가 본다). -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "181ca29e1797481181c7d4cf67441efc"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- cf-beacon:end -->
+</body>
+</html>

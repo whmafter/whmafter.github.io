@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What's your Korean saju character? Four Pillars (Bazi) finder — Saju Bomi</title>
   <meta name="description" content="Find your Korean saju character from your birth date. In saju, the Korean Four Pillars of Destiny (Bazi), the day you were born has one of ten stems, and each has a nature character. A free K-fortune for fun, worked out in your browser.">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css?v=20261107o">
   <link rel="alternate" hreflang="ko" href="../ko/character/">
   <!-- Open Graph: 이 페이지는 정적이라 링크 미리보기를 만드는 크롤러에게 주소(?c=byeong)마다 다른 그림을 줄 수 없다.
        그래서 페이지 전체의 기본 그림 하나를 쓴다. 캐릭터마다의 그림 열 장(assets/og/<천간>.png, 1200×630)은
@@ -24,20 +24,23 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+  <!-- saju-header:start -->
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="../">Saju Bomi</a>
+    <div class="wrap wrap-wide">
+      <a class="brand" href="/">Saju Bomi</a>
       <nav class="site-nav" aria-label="Site">
-        <a href="../privacy/">Privacy</a>
-        <a href="../ko/character/" lang="ko" hreflang="ko">한국어</a>
+        <a href="/app/">Web vs. app</a>
+        <a href="/ko/character/" lang="ko" hreflang="ko">한국어</a>
       </nav>
     </div>
   </header>
+  <!-- saju-header:end -->
 
   <main class="wrap">
     <section class="hero">
       <h1>What's your Korean saju character?</h1>
       <p>In Korean saju, the day you were born has one of ten signs, and Saju Bomi gives each one a nature character. Enter your birth date to meet yours.</p>
+      <p class="saju-privacy"><svg class="saju-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Saju Bomi doesn't store visitors' personal information. Your birth date is worked out on this screen only and is gone when you close it.</span></p>
       <!-- 날짜 칸에 name이 없어서, 스크립트가 꺼져 있어도 날짜가 주소에 실려 가지 않는다. -->
       <form class="character-form" id="character-form" novalidate>
         <label for="birth-date">Your birth date</label>
@@ -62,6 +65,7 @@
       <p class="character-more">In the Android app, your character's face changes with each day's energy, and your birth time and place complete your eight signs.</p>
       <div class="character-actions">
         <a class="button" href="../join/">Join the test</a>
+        <a class="button button-secondary" href="../fortune/">Today's fortune</a>
         <button class="button button-secondary" type="button" id="character-share">Share</button>
       </div>
       <p class="character-status" id="character-share-status" aria-live="polite"></p>
@@ -95,7 +99,7 @@
         <h2>Good to know</h2>
         <ul>
           <li>This is your character from the date alone. If you were born close to midnight, the app may give you the character of the day before or after, because it also uses your birth time and place (the local time zone and the sun's time there).</li>
-          <li>Your birth date is worked out in your browser and is not sent anywhere. The share link holds only the character. This page has no analytics or ads; GitHub Pages, which hosts it, receives the usual access logs (such as IP address and browser).</li>
+          <li>Your birth date is worked out in your browser and is not sent anywhere. The share link holds only the character. This page has no ads. Visits to this website are counted with Cloudflare Web Analytics, which doesn't use cookies, and your birth date is not part of what it sends. GitHub Pages, which hosts it, receives the usual access logs (such as IP address and browser).</li>
           <li>Your character stays the same. Its mood changes with each day's energy. It is one part of your saju, not your whole personality.</li>
         </ul>
       </div>
@@ -110,10 +114,14 @@
     <div class="wrap">
       <p>&copy; Dion Labs. Contact: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
       <p><a href="../">About Saju Bomi</a> · <a href="../privacy/">Privacy policy</a> · <a href="../ko/character/" lang="ko" hreflang="ko">한국어</a></p>
-      <p>Font: Nunito, under the <a href="../assets/fonts/OFL.txt">SIL Open Font License</a>.</p>
+      <p>Font: Pretendard (<a href="../assets/fonts/pretendard/OFL.txt">SIL Open Font License</a>), Nunito (<a href="../assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
     </div>
   </footer>
 
   <script src="../assets/character.js"></script>
+  <!-- cf-beacon:start -->
+  <!-- 방문 수 세기 (Cloudflare Web Analytics, 쿠키·브라우저 저장소 없음). 넣은 생일과 결과는 주소에 없고 이것이 보내는 것에도 없다 (tools/web/fortune_page_check.py가 본다). -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "181ca29e1797481181c7d4cf67441efc"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- cf-beacon:end -->
 </body>
 </html>

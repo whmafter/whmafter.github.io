@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>나의 사주 캐릭터 찾기 — 생일로 보는 일간 캐릭터 | 사주보미</title>
   <meta name="description" content="태어난 날짜만 넣으면 사주의 일간(태어난 날의 천간)으로 열 가지 자연 캐릭터 가운데 나의 사주 캐릭터를 알려 드려요. 계산은 브라우저 안에서만 하고 날짜는 어디에도 보내지 않아요.">
-  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/style.css?v=20261107o">
   <link rel="alternate" hreflang="en" href="../../character/">
   <!-- Open Graph: 이 페이지는 정적이라 링크 미리보기를 만드는 크롤러에게 주소(?c=byeong)마다 다른 그림을 줄 수 없다.
        그래서 페이지 전체의 기본 그림 하나를 쓴다 (한국어 페이지는 글자 없는 그림). 캐릭터마다의 그림 열 장
@@ -24,20 +24,23 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+  <!-- saju-header:start -->
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="../">사주보미</a>
+    <div class="wrap wrap-wide">
+      <a class="brand" href="/ko/">사주보미</a>
       <nav class="site-nav" aria-label="사이트">
-        <a href="../../privacy/ko/">개인정보처리방침</a>
-        <a href="../../character/" lang="en" hreflang="en">English</a>
+        <a href="/ko/app/">웹과 앱</a>
+        <a href="/character/" lang="en" hreflang="en">English</a>
       </nav>
     </div>
   </header>
+  <!-- saju-header:end -->
 
   <main class="wrap">
     <section class="hero">
       <h1>나의 사주 캐릭터 찾기</h1>
       <p>사주에서는 태어난 날의 글자(일간)가 나를 나타내요. 일간은 열 가지이고, 사주보미는 일간마다 자연 캐릭터 하나를 정해 두었어요. 태어난 날짜를 넣고 나의 캐릭터를 만나 보세요.</p>
+      <p class="saju-privacy"><svg class="saju-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>사주보미 웹사이트는 방문자의 개인정보를 저장하지 않아요. 넣은 날짜는 이 화면에서만 계산하고, 창을 닫으면 사라져요.</span></p>
       <!-- 날짜 칸에 name이 없어서, 스크립트가 꺼져 있어도 날짜가 주소에 실려 가지 않는다. -->
       <form class="character-form" id="character-form" novalidate>
         <label for="birth-date">태어난 날짜</label>
@@ -62,6 +65,7 @@
       <p class="character-more">안드로이드 앱에서는 캐릭터의 표정이 그날의 기운에 따라 날마다 바뀌고, 태어난 시각과 곳까지 넣어 사주 여덟 글자를 모두 봐요.</p>
       <div class="character-actions">
         <a class="button" href="../join/">테스트 참여하기</a>
+        <a class="button button-secondary" href="../fortune/">오늘의 운세 보기</a>
         <button class="button button-secondary" type="button" id="character-share">공유하기</button>
       </div>
       <p class="character-status" id="character-share-status" aria-live="polite"></p>
@@ -95,7 +99,7 @@
         <h2>알아 둘 것</h2>
         <ul>
           <li>날짜만으로 본 캐릭터예요. 자정 가까이에 태어났다면 앱에서는 앞날이나 다음 날의 캐릭터가 나올 수 있어요. 앱은 태어난 시각과 곳(그곳의 시간대와 해의 시각)까지 쓰기 때문이에요.</li>
-          <li>태어난 날짜는 이 브라우저 안에서만 계산하고 어디에도 보내지 않아요. 공유 링크에는 캐릭터만 담겨요. 이 페이지에는 분석 도구도 광고도 없어요. 다만 페이지를 올려 둔 GitHub Pages는 여느 웹사이트처럼 접속 기록(IP 주소, 브라우저 정보 같은 것)을 받아요.</li>
+          <li>태어난 날짜는 이 브라우저 안에서만 계산하고 어디에도 보내지 않아요. 공유 링크에는 캐릭터만 담겨요. 이 페이지에는 광고가 없어요. 웹사이트의 방문 수는 쿠키를 쓰지 않는 Cloudflare Web Analytics로 세고, 넣은 날짜는 그것이 보내는 것에 들어가지 않아요. 페이지를 올려 둔 GitHub Pages는 여느 웹사이트처럼 접속 기록(IP 주소, 브라우저 정보 같은 것)을 받아요.</li>
           <li>캐릭터는 바뀌지 않는 바탕이에요. 표정은 그날의 기운에 따라 날마다 달라져요. 캐릭터는 사주의 한 부분이에요. 내 성격의 전부는 아니에요.</li>
         </ul>
       </div>
@@ -110,10 +114,14 @@
     <div class="wrap">
       <p>&copy; Dion Labs. 문의: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
       <p><a href="../">사주보미 소개</a> · <a href="../../privacy/ko/">개인정보처리방침</a> · <a href="../../character/" lang="en" hreflang="en">English</a></p>
-      <p>글꼴: Nunito (<a href="../../assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+      <p>글꼴: Pretendard (<a href="../../assets/fonts/pretendard/OFL.txt">SIL Open Font License</a>), Nunito (<a href="../../assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
     </div>
   </footer>
 
   <script src="../../assets/character.js"></script>
+  <!-- cf-beacon:start -->
+  <!-- 방문 수 세기 (Cloudflare Web Analytics, 쿠키·브라우저 저장소 없음). 넣은 생일과 결과는 주소에 없고 이것이 보내는 것에도 없다 (tools/web/fortune_page_check.py가 본다). -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "181ca29e1797481181c7d4cf67441efc"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- cf-beacon:end -->
 </body>
 </html>

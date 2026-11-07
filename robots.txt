@@ -1,0 +1,5 @@
+# tools/web/build_pages.py가 만든다.
+User-agent: *
+Allow: /
+
+Sitemap: https://whmafter.github.io/sitemap.xml

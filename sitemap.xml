@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- tools/web/build_pages.py가 만든다. 초대 페이지(invite/)는 검색에 걸리지 않게 두어 넣지 않는다. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://whmafter.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/fortune/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/fortune/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/fortune/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/fortune/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/fortune/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/fortune/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/fortune/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/fortune/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/year/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/year/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/year/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/year/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/year/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/year/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/year/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/year/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/match/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/match/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/match/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/match/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/match/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/match/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/match/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/match/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/saju/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/saju/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/saju/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/saju/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/saju/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/saju/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/saju/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/saju/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/love/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/love/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/love/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/love/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/love/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/love/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/love/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/love/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/health/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/health/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/health/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/health/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/health/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/health/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/app/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/app/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/app/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/app/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/how/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/how/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/how/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/how/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/how/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/how/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/how/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/how/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/character/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/character/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/character/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/character/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/character/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/character/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/character/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/character/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/join/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/join/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/join/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/join/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/ko/join/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/join/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/join/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/join/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/privacy/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/privacy/"/>
+  </url>
+  <url>
+    <loc>https://whmafter.github.io/privacy/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whmafter.github.io/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whmafter.github.io/privacy/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/privacy/"/>
+  </url>
+</urlset>

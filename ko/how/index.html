@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- tools/web/build_pages.py가 만든다. 손으로 고치지 않는다 (세부실행계획 2장 71~73번). -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- saju-head:start -->
+  <title>이렇게 계산해요 – 사주보미의 계산 기준과 확인 | 사주보미</title>
+  <meta name="description" content="이 웹사이트와 사주보미 앱이 쓰는 계산의 기준과, 그 계산을 어떻게 확인했는지.">
+  <link rel="stylesheet" href="/assets/style.css?v=20261107o">
+  <link rel="canonical" href="https://whmafter.github.io/ko/how/">
+  <link rel="alternate" hreflang="en" href="https://whmafter.github.io/how/">
+  <link rel="alternate" hreflang="ko" href="https://whmafter.github.io/ko/how/">
+  <link rel="alternate" hreflang="x-default" href="https://whmafter.github.io/how/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="사주보미">
+  <meta property="og:title" content="이렇게 계산해요">
+  <meta property="og:description" content="이 웹사이트와 사주보미 앱이 쓰는 계산의 기준과, 그 계산을 어떻게 확인했는지.">
+  <meta property="og:url" content="https://whmafter.github.io/ko/how/">
+  <meta property="og:image" content="https://whmafter.github.io/assets/og/default_ko.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="사주보미의 열 캐릭터">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- saju-head:end -->
+</head>
+<body>
+  <!-- saju-header:start -->
+  <header class="site-header">
+    <div class="wrap wrap-wide">
+      <a class="brand" href="/ko/">사주보미</a>
+      <nav class="site-nav" aria-label="사이트">
+        <a href="/ko/app/">웹과 앱</a>
+        <a href="/how/" lang="en" hreflang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <!-- saju-header:end -->
+
+  <main class="wrap wrap-wide">
+  <section class="page-hero">
+      <h1>이렇게 계산해요</h1>
+      <p class="page-lead">웹과 앱이 쓰는 계산의 기준과, 그 계산을 어떻게 확인했는지예요.</p>
+    </section>
+    <section class="page-section" aria-labelledby="how-web-title">
+      <h2 id="how-web-title">이 웹사이트는 이렇게 계산해요</h2>
+      <ul class="page-list">
+        <li>사주보미 앱의 계산 코드를 그대로 써요. 앱과 같은 생일이면 같은 결과예요.</li>
+        <li>태어난 나라를 고르면 그 나라의 시간대로, 고르지 않으면 한국 시간으로 계산하고 경도 보정은 하지 않아요. 앱에서 태어난 도시까지 넣으면 더 정확해요.</li>
+        <li>음력 생일은 앱처럼 양력으로 바꿔 계산해요 (윤달 포함).</li>
+        <li>태어난 시각을 모르면 시각에 따라 달라지지 않는 것만 단정하고, 그렇다고 알려요.</li>
+        <li>자세한 표, 문단마다의 &quot;왜?&quot;, 출생 시간 탐색기도 앱의 화면과 같은지 따로 견줘요.</li>
+        <li>재미로 보는 콘텐츠예요.</li>
+        <li>웹의 결과가 앱과 같은지 앱의 함수로 짠 글과 견줘요: 두 언어 12,206건, 다름 0 (2026-11-07).</li>
+      </ul>
+    </section>
+    <section class="page-section" aria-labelledby="how-verify-title">
+      <h2 id="how-verify-title">이 앱의 계산은 이렇게 확인해요</h2>
+      <p class="page-soft">절기 시각과 네 기둥을 따로 한 계산과 견주는 검사를 앱을 고칠 때마다 돌려요. 계산이 맞는지를 확인하는 것이지, 운세가 맞는다는 뜻은 아니에요.</p>
+      <div class="page-items">
+        <div class="page-item"><h3>절기 (1900~2100년)</h3><p>절입 2,412개의 순간을 미국 항공우주국 제트추진연구소(NASA JPL)의 천체력 DE440s로 계산해 앱에 넣었어요. 따로 한 천문 계산과 견주면 평균 0.25초, 가장 크게 0.53초 차이예요.</p></div>
+        <div class="page-item"><h3>네 기둥</h3><p>다른 계산 라이브러리 둘과 견줘요: 무작위로 고른 5,000명(lunar-python)과 한국에서 태어난 2,000명(manseryeok-js). 라이브러리의 계산 방식이 달라 결과가 갈릴 수 있는 경우(절입 몇 분 안, 자시를 나누는 법 등)는 표시해 두고 그 견줌에서 빼요.</p></div>
+        <div class="page-item"><h3>서울과 해외 도시</h3><p>서울과 해외 8개 도시에서 태어난 1,850명을 자시 방식 둘과 경도 보정 켬·끔으로 계산한 사주 7,400개가 천문 계산과 모두 같았어요 (2026년 10월).</p></div>
+        <div class="page-item"><h3>서머타임과 표준시</h3><p>태어난 곳과 때의 시간대 기록(IANA 시간대 자료)으로 그때의 서머타임과 표준시를 맞춰요. 그 결과는 위의 '계산에 쓴 시각'에 있어요.</p></div>
+        <div class="page-item"><h3>같은 사주는 늘 같은 글</h3><p>같은 사람, 같은 날, 같은 설정이면 언제 열어도 같은 풀이가 나와요. 무작위로 고르는 글이 없어요.</p></div>
+      </div>
+    </section>
+    <p class="page-soft page-notice">재미로 보는 콘텐츠예요.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap-wide">
+      <p class="site-footer-links"><a href="/ko/">사주보미 소개</a> · <a href="/ko/app/">웹과 앱의 차이</a> · <a href="/ko/how/">이렇게 계산해요</a> · <a href="/ko/character/">사주 캐릭터 찾기</a> · <a href="/ko/join/">테스트 참여하기</a> · <a href="/privacy/ko/">개인정보처리방침</a> · <a href="/how/" lang="en" hreflang="en">English</a></p>
+      <p>&copy; Dion Labs. 문의: <a href="mailto:gusalsnl@gmail.com">gusalsnl@gmail.com</a></p>
+      <p>글꼴: Pretendard (<a href="/assets/fonts/pretendard/OFL.txt">SIL Open Font License</a>), Nunito (<a href="/assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+    </div>
+  </footer>
+  <!-- cf-beacon:start -->
+  <!-- 방문 수 세기 (Cloudflare Web Analytics, 쿠키·브라우저 저장소 없음). 넣은 생일과 결과는 주소에 없고 이것이 보내는 것에도 없다 (tools/web/fortune_page_check.py가 본다). -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "181ca29e1797481181c7d4cf67441efc"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- cf-beacon:end -->
+</body>
+</html>
